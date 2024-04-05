@@ -1,0 +1,15 @@
+.homeDesign {
+    max-height: 92vh;
+    width: 100vw;
+    background-color: rgb(41, 49, 52);
+
+}
+
+.containerImg {
+    width: 50em;
+    height: 92vh;
+}
+
+.img-logo {
+    max-height: 92vh;
+}
