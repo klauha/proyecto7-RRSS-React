@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Input } from '../../common/Input/input'
+import { Input } from '../../common/Input/Input'
 import './Register.css'
 import { useNavigate } from "react-router-dom";
 import { register } from '../../services/apiCalls';

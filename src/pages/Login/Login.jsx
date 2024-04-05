@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react'
-import { Input } from '../../common/Input/input'
+import { Input } from '../../common/Input/Input'
 import "./Login.css"
 import { login } from '../../services/apiCalls'
 import { useNavigate } from 'react-router-dom'

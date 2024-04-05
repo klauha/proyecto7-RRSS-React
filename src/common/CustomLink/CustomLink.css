@@ -1,0 +1,18 @@
+.linkDesign {
+    font-weight: bold;
+    font-size: 18px;
+    color: rgba(237, 245, 240, 0.887);
+    margin: 1em;
+    transition: 0,5s;
+    font-family: 'Poppins', sans-serif;
+    font-weight: normal;
+    color: white;
+}
+
+.linkDesign:hover {
+    cursor: pointer;
+    transition: 0.5s;
+    color:  rgba(213, 188, 188, 0.9);
+    text-decoration: underline;
+    text-decoration-color: rgba(213, 188, 188, 0.9);
+}
