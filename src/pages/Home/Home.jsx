@@ -5,7 +5,6 @@ import { Header } from '../../common/Header/Header'
 export const Home = () => {
     return (
         <>
-            <Header />
             <div className='homeDesign'>
                 <div>
                     home

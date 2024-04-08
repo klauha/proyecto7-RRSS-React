@@ -1,33 +1,43 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import "./Header.css"
 import { CustomLink } from '../CustomLink/CustomLink'
 import { useNavigate } from 'react-router-dom'
-import { useState, useEffect } from 'react';
+
+import { useDispatch, useSelector } from 'react-redux';
+import { logoutRdx, userData } from '../../app/slices/userSlice';
 
 
 export const Header = () => {
+  //Instancia de conexion a modo lectura
+  const rdxUser = useSelector(userData);
+
+  //Instancia de conexion a modo escritura
+  const dispatch = useDispatch();
+
+  console.log(rdxUser.token);
+  // useEffect(() => {
+  //   console.log(rdxUser, " credenciales pasaporte");
+  // }, [rdxUser]);
+
   const navigate = useNavigate()
 
-  const [token, setToken] = useState(localStorage.getItem('token'))
-  const [role, setRole] = useState(localStorage.getItem('role'))
-
   const handleLogout = () => {
-    // Eliminamos el token del localStorage y actualizamos el estado local
-    localStorage.removeItem("token")
-    localStorage.removeItem("name")
-    localStorage.removeItem("role")
-    setToken(null)
+    console.log('hola');
+
+    // Eliminamos el token del store y actualizamos el estado local
+    dispatch(logoutRdx({ token: "" }))
+    console.log(rdxUser);
     navigate("/login")
   }
 
   return (
     <>
       {
-        token ? (<div className='headerDesign'>
+        rdxUser.token ? (<div className='headerDesign'>
           <div className="header-logout">
-            { (role != "user") ? role : ""}
+            {(rdxUser.role != "user") ? rdxUser.role : ""}
             {/* path={"/admin/users"} */}
-            
+
           </div>
           <CustomLink
             title={"Home"}
@@ -45,10 +55,10 @@ export const Header = () => {
         ) : (
           <div className='headerDesign'>
             <CustomLink
-            title={"Home"}
-            path={"/"}
-          />
-           
+              title={"Home"}
+              path={"/"}
+            />
+
             <CustomLink
               title={"Registro"}
               path={"/register"}
@@ -58,6 +68,7 @@ export const Header = () => {
               title={"Login"}
               path={"/login"}
             />
+
           </div>
         )}
     </>
