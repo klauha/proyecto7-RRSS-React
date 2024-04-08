@@ -1,7 +1,7 @@
 .registerDesign {
     min-height: 92vh;
     width: 100vw;
-    background-image:  url("../../../img/logo-2018.jpg");
+    background: white;
     display: flex;
     flex-direction: column;
     justify-content: center;

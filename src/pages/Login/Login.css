@@ -1,14 +1,14 @@
 .loginDesign {
     min-height: 92vh;
     width: 100vw;
-    background-image: url("../../../img/logo-2018.jpg");
-    /* linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), */
+    background-color: white;
     display: flex;
-    flex-direction: column ;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
-.formLogin{
+
+.formLogin {
     width: 20em;
     height: 30em;
     border-radius: 5%;
@@ -16,5 +16,5 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: rgba(213, 188, 188, 0.9);
+    background-color: rgba(142, 142, 142, 0.9);
 }

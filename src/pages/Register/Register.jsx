@@ -7,8 +7,6 @@ import { Header } from '../../common/Header/Header';
 import { Button } from '../../common/Button/Button';
 
 export const Register = () => {
-  
-
     const [bodyCredentials, setBodyCredentials] = useState(
         {
             email: "",
@@ -28,8 +26,7 @@ export const Register = () => {
 
    
 
-    const inputHandler = (e) => {
-       
+    const inputHandler = (e) => {       
         setBodyCredentials((prevState) => (
             {
                 ...prevState,
@@ -42,7 +39,7 @@ export const Register = () => {
             <Header />
             <div className='registerDesign'>
                 <div className="formRegister">
-                    <h3> Crea tu cuenta</h3>
+                    <h3> Crea tu cuenta </h3>
                     <Input
                         className="inputDesign input-design"
                         type="email"
@@ -58,6 +55,7 @@ export const Register = () => {
                         name="password"
                         onChangeFunction={(e) => inputHandler(e)}
                     />
+
                     <Button
                         title={"Registrar"}
                         className="ButtonDesign"

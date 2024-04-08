@@ -38,7 +38,8 @@ export const Login = () => {
       localStorage.setItem("token", responseApiLogin.token)
       localStorage.setItem('name', decoded.username)
       localStorage.setItem('role', decoded.roleName)
-      navigate("/admin/users")
+
+      navigate("/home")
       // window.location.href = "/admin/users";
     }
   }
@@ -55,7 +56,6 @@ export const Login = () => {
   return (
     <>
       <Header />
-
       <div className='loginDesign'>
         <div className="formLogin">
         <h3> Inicia sesión</h3>

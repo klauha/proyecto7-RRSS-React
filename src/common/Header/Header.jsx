@@ -34,10 +34,6 @@ export const Header = () => {
             path={"/"}
           />
           <CustomLink
-            title={"Services"}
-            path={"/services"}
-          />
-          <CustomLink
             title={"Profile"}
             path={"/profile"}
           />
@@ -52,10 +48,7 @@ export const Header = () => {
             title={"Home"}
             path={"/"}
           />
-            <CustomLink
-              title={"Services"}
-              path={"/services"}
-            />
+           
             <CustomLink
               title={"Registro"}
               path={"/register"}

@@ -1,28 +1,29 @@
 import React from 'react'
 import "./PrivateHome.css"
-import { useNavigate } from 'react-router-dom'
+
 import { Header } from '../../common/Header/Header'
 
+
+
 export const PrivateHome = () => {
-  const navigate = useNavigate()
+    return (
+        <>
+            <Header />
+            <div className='privateHomeDesign'>
+                <div className="sidebar">
+                    <div className="container-img">
+                        <img src="" alt="profilImg" />
+                    </div>
+                    <div className="container-data">
+                      <div className="data-style">Nombre</div>
+                      <div className="data-style">Apellidos</div>
+                      <div className="data-style">Nickname</div>
 
-  const redirectToCreateAppointments = () => {
-    navigate('/create-appointment')
-  }
-  const redirectToMyAppointments = () => {
-    navigate('/my-appointments')
-  }
-
-  return (
-    <>
-      <Header />
-      <div className='privateHomeDesign'>
-        <div className="imgHome">
-        </div>
-        <div className="optionsHome">
-
-        </div>
-      </div>
-    </>
-  )
+                    </div>
+                </div>
+                <div className="feed">h</div>
+            </div>
+        </>
+    )
 }
+

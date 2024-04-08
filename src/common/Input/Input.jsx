@@ -4,7 +4,7 @@ import "./Input.css"
 export const Input = ({className, type, placeHolder, name,value, onChangeFunction,disabled }) => {
     return (
         <>
-            <Input
+            <input
                 className={className}
                 type={type}
                 placeholder={placeHolder}
