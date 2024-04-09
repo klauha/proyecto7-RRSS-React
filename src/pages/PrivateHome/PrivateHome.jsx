@@ -24,12 +24,12 @@ export const PrivateHome = () => {
     return (
         <>
             <div className='privateHomeDesign'>
-                    {
-                        userPosts.map(post => (
-                            <Card data={post} />
-                        ))
-                    }
-                </div>
+                {
+                    userPosts.map((post, index) => (
+                        <Card key={index} data={post} />
+                    ))
+                }
+            </div>
         </>
     )
 
