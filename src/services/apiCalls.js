@@ -1,7 +1,4 @@
-
 const apiUrl = "http://localhost:4000"
-
-
 
 
 export const register = async (bodyCredentials) => {
@@ -108,19 +105,20 @@ export const editProfiles = async (bodyDataToUpdate) => {
         return error
     }
 }
-export const getPosts = async ()=>{
+export const getPosts = async (token)=>{
+    console.log(token);
     try {
         const response = await fetch(
-            `${apiUrl}/api/users/posts`,
-           
+            `${apiUrl}/api/post`,           
             {
-                method: "Get",
+                method: "GET",
                 headers: {
                     "Content-Type": "application/json",
-                    "Authorization": "Bearer " + localStorage.getItem("token")
+                    "Authorization": "Bearer " + token
                 }
             }
         )
+
         const data = await response.json()
 
         return data
