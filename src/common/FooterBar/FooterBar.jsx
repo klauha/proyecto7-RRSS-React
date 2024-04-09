@@ -1,11 +1,12 @@
 import React from 'react'
+import "./FooterBar.css"
 import { CustomLink } from '../CustomLink/CustomLink'
 
 export const FooterBar = () => {
   return (
     <>
         <div className="footer-bar-container">
-        </div>
+    
           <CustomLink
             title={"Home"}
             path={"/"}
@@ -18,6 +19,7 @@ export const FooterBar = () => {
             title={"Perfil"}
             path={"/profile"}
             />  
+            </div>
     </>
   )
 }
