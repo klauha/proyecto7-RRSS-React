@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react'
-import "./Profile.css"
+import "./editProfile.css"
 import { Input } from '../../common/Input/Input'
-import { editProfile, getProfile } from '../../services/apiCalls'
+import { editProfiles, getProfile } from '../../services/apiCalls'
 import { Header } from '../../common/Header/Header'
 import { Button } from '../../common/Button/Button'
 import { useNavigate } from 'react-router-dom'
 
 
-export const Profile = () => {
+export const editProfile = () => {
 
   const [userProfileData, setUserProfileData] = useState({})
   const [hadleInputDisable, setHandleInputDisable] = useState(true)
@@ -20,8 +20,8 @@ export const Profile = () => {
       navigate('/login')
     }
   }, [token])
-  
-// Efecto para obtener los datos del perfil del usuario cuando el componente se monta
+
+  // Efecto para obtener los datos del perfil del usuario cuando el componente se monta
   useEffect(() => {
     const getUserProfile = async () => {
       const profile = await getProfile()
@@ -30,12 +30,12 @@ export const Profile = () => {
     getUserProfile()
   }, [])
 
-// Función para habilitar/deshabilitar la edición de datos
+  // Función para habilitar/deshabilitar la edición de datos
   const editData = () => {
     setHandleInputDisable(!hadleInputDisable)
   }
 
-// Función para editar el perfil de usuario
+  // Función para editar el perfil de usuario
   const editProfileUser = async () => {
     try {
 
@@ -43,9 +43,9 @@ export const Profile = () => {
         firstName: userProfileData.first_name,
         lastName: userProfileData.last_name
       }
-// Llamamos a la función para editar el perfil utilizando la API
- 
-      const updateUserProfile = await editProfile(dataToUpdate)
+      // Llamamos a la función para editar el perfil utilizando la API
+
+      const updateUserProfile = await editProfiles(dataToUpdate)
 
     } catch (error) {
 
@@ -66,50 +66,50 @@ export const Profile = () => {
 
   return (
     <>
-    <Header />
-    <div className='profileDesign'>
-      <div className='dataUser'>
-        <div className='profileImg'>
-          <img src="/img/imgprofile.jpg" alt="profilImg" />
+      <Header />
+      <div className='profileDesign'>
+        <div className='dataUser'>
+          <div className='profileImg'>
+            <img src="/img/imgprofile.jpg" alt="profilImg" />
+          </div>
+          <Input
+            className="inputProfileDesign"
+            type="text"
+            name="first_name"
+            value={userProfileData.first_name || ""}
+            disabled={hadleInputDisable}
+            onChangeFunction={inputHandler}
+          ></Input>
+          <Input
+            className="inputProfileDesign"
+            type="text"
+            name="last_name"
+            value={userProfileData?.last_name ?? ""}
+            disabled={hadleInputDisable}
+            onChangeFunction={(e) => inputHandler(e)}
+          ></Input>
+          <Input
+            className="inputProfileDesign"
+            type="text"
+            name="email"
+            value={userProfileData.email || ""}
+            disabled={true}
+          ></Input>
+          <div className="buttons">
+            <Button
+              title={"Editar"}
+              className="ButtonDesign"
+              onClick={editData}
+            />
+            <Button
+              title={"Actualizar"}
+              className="ButtonDesign"
+              onClick={editProfileUser}
+            />
+          </div>
+
         </div>
-        <Input
-          className="inputProfileDesign"
-          type="text"
-          name="first_name"
-          value={userProfileData.first_name || ""}
-          disabled={hadleInputDisable}
-          onChangeFunction={inputHandler}
-        ></Input>
-        <Input
-          className="inputProfileDesign"
-          type="text"
-          name="last_name"
-          value={userProfileData?.last_name ?? ""}
-          disabled={hadleInputDisable}
-          onChangeFunction={(e) => inputHandler(e)}
-        ></Input>
-        <Input
-          className="inputProfileDesign"
-          type="text"
-          name="email"
-          value={userProfileData.email || ""}
-          disabled={true}
-        ></Input>
-        <div className="buttons">
-          <Button
-         title={"Editar"}
-        className="ButtonDesign"
-        onClick={editData}
-        />
-         <Button
-         title={"Actualizar"}
-        className="ButtonDesign"
-        onClick={editProfileUser}
-        />
-        </div>
-      
       </div>
-    </div>
     </>
   )
 }

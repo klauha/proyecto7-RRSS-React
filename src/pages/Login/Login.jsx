@@ -26,14 +26,16 @@ export const Login = () => {
   const navigate = useNavigate()
 
   const LogMe = async () => {
+    console.log(1);
     // Llamar a la función de inicio de sesión proporcionando las credenciales
     const responseApiLogin = await login(bodyCredentials)
-
+    console.log(2);
     const decoded = decodeToken(responseApiLogin.token)
 
     console.log(decoded);
     // Si el inicio de sesión es exitoso y el usuario tiene rol user
     if (responseApiLogin.success && decoded.roleName === "user") {
+      console.log(3);
       dispatch(loginRdx({
         token: responseApiLogin.token,
         // name: decoded.username,
@@ -42,6 +44,7 @@ export const Login = () => {
 
       navigate("/home")
     } else {
+      console.log(4);
       // Si el inicio de sesión es exitoso y el usuario es admin o superadmin
       dispatch(loginRdx({
         credentials: {

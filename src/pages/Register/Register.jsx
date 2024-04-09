@@ -36,7 +36,7 @@ export const Register = () => {
     }
     return (
         <>
-            <Header />
+           
             <div className='registerDesign'>
                 <div className="formRegister">
                     <h3> Crea tu cuenta </h3>

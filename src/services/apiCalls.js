@@ -2,6 +2,8 @@
 const apiUrl = "http://localhost:4000"
 
 
+
+
 export const register = async (bodyCredentials) => {
     try {
         const response = await fetch(
@@ -63,7 +65,7 @@ export const getProfile = async () => {
     }
 }
 
-export const editProfile = async (bodyDataToUpdate) => {
+export const editProfiles = async (bodyDataToUpdate) => {
     try {
         const response = await fetch(
             `${apiUrl}/api/users/profile`,
@@ -83,5 +85,46 @@ export const editProfile = async (bodyDataToUpdate) => {
     } catch (error) {
         console.log(error); error
 
+    }
+}
+
+ export const getMyPosts = async (id)=>{
+    try {
+        const response = await fetch(
+            `${apiUrl}/api/users/posts/${id}`,
+           
+            {
+                method: "Get",
+                headers: {
+                    "Content-Type": "application/json",
+                    "Authorization": "Bearer " + localStorage.getItem("token")
+                }
+            }
+        )
+        const data = await response.json()
+
+        return data
+    } catch (error) {
+        return error
+    }
+}
+export const getPosts = async ()=>{
+    try {
+        const response = await fetch(
+            `${apiUrl}/api/users/posts`,
+           
+            {
+                method: "Get",
+                headers: {
+                    "Content-Type": "application/json",
+                    "Authorization": "Bearer " + localStorage.getItem("token")
+                }
+            }
+        )
+        const data = await response.json()
+
+        return data
+    } catch (error) {
+        return error
     }
 }
