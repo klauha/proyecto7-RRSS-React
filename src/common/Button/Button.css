@@ -11,7 +11,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color:#ed8687 ;
+    background-color:rgb(101, 161, 183) ;
+    font-family: poppins;
     font-size: 15px;
     font-family: poppins;
     opacity: 0.7;

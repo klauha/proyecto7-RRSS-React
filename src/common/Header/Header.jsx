@@ -39,14 +39,7 @@ export const Header = () => {
             {/* path={"/admin/users"} */}
 
           </div>
-          <CustomLink
-            title={"Home"}
-            path={"/"}
-          />
-          <CustomLink
-            title={"Profile"}
-            path={"/profile"}
-          />
+          
           <div className="header-logout" onClick={handleLogout}>
             Log Out
           </div>

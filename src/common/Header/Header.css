@@ -2,8 +2,7 @@
     box-sizing: border-box;
     height: 8vh;
     padding: 30px;
-    background-color:rgb(41, 49, 52);
-    display: flex;
+    background-color:rgb(101, 161, 183) ;   display: flex;
     justify-content: flex-end;
     align-items: center;
     /* margin-right: 15px; */

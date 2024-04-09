@@ -20,10 +20,14 @@
 }
 
 .inputForm{
-    background: transparent;
+    height: 1.5em;
+    width: 20em;
+    background: white;
     font-size: 18px;
     font-family: poppins;
-    padding: 0.8em;
+    border-radius: 0.5em;
+    margin: 1em;
+    padding: 0.5em;
    
 
 }

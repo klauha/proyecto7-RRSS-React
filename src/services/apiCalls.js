@@ -126,3 +126,25 @@ export const getPosts = async (token)=>{
         return error
     }
 }
+export const createPost = async (token,newPost)=>{
+
+    try {
+        const response = await fetch(
+            `${apiUrl}/api/post`,           
+            {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    "Authorization": "Bearer " + token
+                },
+                body: JSON.stringify(newPost)
+            }
+        )
+
+        const data = await response.json()
+
+        return data
+    } catch (error) {
+        return error
+    }
+}
