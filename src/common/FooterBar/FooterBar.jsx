@@ -9,7 +9,7 @@ export const FooterBar = () => {
     
           <CustomLink
             title={"Home"}
-            path={"/"}
+            path={"/home"}
           />     
           <CustomLink
             title={"Crear Post"}
