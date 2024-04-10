@@ -147,3 +147,24 @@ export const createPost = async (token,newPost)=>{
         return error
     }
 }
+export const getPostId = async (token, postId)=>{
+
+    try {
+        const response = await fetch(
+            `${apiUrl}/api/post/${postId}`,           
+            {
+                method: "GET",
+                headers: {
+                    "Content-Type": "application/json",
+                    "Authorization": "Bearer " + token
+                }
+            }
+        )
+
+        const data = await response.json()
+
+        return data
+    } catch (error) {
+        return error
+    }
+}
