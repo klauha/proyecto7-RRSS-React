@@ -1,0 +1,52 @@
+.profileDesign {
+    /* width: 100vw; */
+
+    background-color: white;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 100px;
+
+}
+.container-user-data{
+    background-color:transparent;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    height: 15vh;
+    width: 60vw;
+    margin-top: 40px;
+
+  
+}
+.profileImg {
+    margin-top: 20px;
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    margin:2em;
+  }
+.button-profile{
+    height: 1.5em;
+    width: 30em;
+    padding: 5px;
+    margin: 2em;
+    border-radius: 0.5em;
+    color:white;
+    font-weight: bold;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:rgb(60, 43, 120) ;
+    font-family: poppins;
+    font-size: 15px;
+    font-family: poppins;
+    opacity: 0.7;
+}
+

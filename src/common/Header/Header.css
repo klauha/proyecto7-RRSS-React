@@ -2,9 +2,11 @@
     box-sizing: border-box;
     height: 8vh;
     padding: 30px;
-    background-color:rgb(101, 161, 183) ;   display: flex;
+    background-color: transparent;
+    display: flex;
     justify-content: flex-end;
     align-items: center;
+    background-color: rgb(60, 43, 120);
     /* margin-right: 15px; */
 }
 
@@ -17,7 +19,7 @@
 .header-logout:hover {
     cursor: pointer;
     transition: 0.5s;
-    color:  rgba(213, 188, 188, 0.9);
+    color: rgba(213, 188, 188, 0.9);
     text-decoration: underline;
     text-decoration-color: rgba(213, 188, 188, 0.9);
 }

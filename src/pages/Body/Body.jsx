@@ -5,6 +5,7 @@ import { Register } from "../Register/Register"
 import { PrivateHome } from "../PrivateHome/PrivateHome"
 import { editProfile } from "../editProfile/editProfile"
 import { CreatePost } from "../CreatePost/CreatePost"
+import { Profile } from "../Profile/Profile"
 
 // import { Admin } from "../Admin/Admin"
 
@@ -17,6 +18,7 @@ export const Body = () => {
             <Route path="/home" element={<PrivateHome />} />
             <Route path="/create-post" element={<CreatePost />} />
             <Route path="/edit-profile" element={<editProfile />} /> 
+            <Route path="/profile" element={<Profile />} /> 
             {/* <Route path="/admin/users" element={<Admin />} />             */}
         </Routes>
     )

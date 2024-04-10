@@ -42,7 +42,7 @@ export const login = async (bodyCredentials) => {
     }
 }
 
-export const getProfile = async () => {
+export const getProfile = async (token) => {
     try {
         const response = await fetch(
             `${apiUrl}/api/users/profile`,
@@ -50,7 +50,7 @@ export const getProfile = async () => {
                 method: "Get",
                 headers: {
                     "Content-Type": "application/json",
-                    "Authorization": "Bearer " + localStorage.getItem("token")
+                    "Authorization": "Bearer " + token
                 }
             }
         )
@@ -85,16 +85,15 @@ export const editProfiles = async (bodyDataToUpdate) => {
     }
 }
 
- export const getMyPosts = async (id)=>{
+ export const getMyPosts = async (token)=>{
     try {
         const response = await fetch(
-            `${apiUrl}/api/users/posts/${id}`,
-           
+            `${apiUrl}/api/post/own`,           
             {
                 method: "Get",
                 headers: {
                     "Content-Type": "application/json",
-                    "Authorization": "Bearer " + localStorage.getItem("token")
+                    "Authorization": "Bearer " + token
                 }
             }
         )

@@ -41,14 +41,14 @@ export const CreatePost = () => {
 
             <div className='create-post-design'>
                 <div className="container-post">
-                    <label htmlFor="">Añada la URL de la imagen:</label>
+                    <label htmlFor="">Añade la URL de la imagen:</label>
                     <Input
                         className='inputForm'
                         name="urlImg"
                         onChangeFunction={(e) => inputHandler(e)}
                         type="text"
                     />
-                    <label htmlFor="">Escriba la información:</label>
+                    <label htmlFor="">Escribe la información:</label>
                     <textarea
                         className='textarea-post'
                         name="content"
