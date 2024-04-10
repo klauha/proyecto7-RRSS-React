@@ -19,6 +19,9 @@ export const Card = ({ data }) => {
         <img src={data.urlImg}  />
         <p> {data.content}</p>
         <div>{data.likes}</div>
+        <div className="like-icon">
+        ❤️
+        </div>
 
       </div>
      

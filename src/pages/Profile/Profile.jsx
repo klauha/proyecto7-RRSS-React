@@ -36,34 +36,36 @@ export const Profile = () => {
     return (
 
         <div className='profileDesign'>
-            <div className="container-user-data">
-                <div className='profileImg'>
-                    <img src="/img/imgprofile.jpg" alt="profilImg" />
+            <div className="userProfile">
+                <div className="container-user-data">
+                    <div className='profileImg'>
+                        <img src="/img/imgprofile.jpg" alt="profilImg" />
+                    </div>
+                    <div className="container-data">
+                        <Input
+                            className="inputProfileDesign input-profile"
+                            type="text"
+                            name="first_name"
+                        // value={userProfileData.first_name || ""}
+                        // disabled={hadleInputDisable}
+                        // onChangeFunction={inputHandler}
+                        ></Input>
+                        <Input
+                            className="inputProfileDesign input-profile"
+                            type="text"
+                            name="last_name"
+                        // value={userProfileData?.last_name ?? ""}
+                        // disabled={hadleInputDisable}
+                        // onChangeFunction={(e) => inputHandler(e)}
+                        ></Input>
+                        <Button
+                            title={"Editar"}
+                            className="button-profile"
+                        //   onClick={LogMe}
+                        ></Button>
+                    </div>
                 </div>
-                <div className="container-data">
-                <Input
-                    className="inputProfileDesign input-profile"
-                    type="text"
-                    name="first_name"
-                // value={userProfileData.first_name || ""}
-                // disabled={hadleInputDisable}
-                // onChangeFunction={inputHandler}
-                ></Input>
-                <Input
-                    className="inputProfileDesign input-profile"
-                    type="text"
-                    name="last_name"
-                // value={userProfileData?.last_name ?? ""}
-                // disabled={hadleInputDisable}
-                // onChangeFunction={(e) => inputHandler(e)}
-                ></Input>
-                <Button
-                  title={"Editar"}
-                  className="button-profile"
-                //   onClick={LogMe}
-                ></Button>
-                </div>
-              
+                
             </div>
             {
                 userPosts.map((userPost, index) => (

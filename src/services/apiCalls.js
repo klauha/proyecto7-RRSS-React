@@ -168,3 +168,23 @@ export const getPostId = async (token, postId)=>{
         return error
     }
 }
+export const deletePostById= async (token, postId)=>{
+    try {
+        const response = await fetch(
+            `${apiUrl}/api/post/${postId}`,           
+
+            {
+                method: "Delete",
+                headers: {
+                    "Content-Type": "application/json",
+                    "Authorization": "Bearer " + token
+                }
+            }
+        )
+        const data = await response.json()
+        return data
+
+    } catch (error) {
+        return error
+    }
+}

@@ -25,8 +25,29 @@
 }
 
 
-.card:hover {
-    transform: scale(1.2);
-    transition: transform 0.3s ease-in-out;
+.card-detail:hover {
+    transform: scale(1.3);
+    transition: transform 0.2s ;
     z-index: 2;
+}
+.like-icon{
+    display: flex;
+    align-items: flex-end;
+    justify-content: end;
+    padding-bottom: 150px;
+    margin-right: 10px;
+    opacity: 0.7;
+    font-size: 28px;
+    position: relative;
+    top: -30px;
+}
+.like-icon:hover {
+cursor: pointer;
+transition: 0.2s;
+opacity: 1;
+
+}
+.like-icon:active {
+    transform: scale(1.05);
+    transition: transform 0.2s;
 }
