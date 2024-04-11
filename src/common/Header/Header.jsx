@@ -32,8 +32,10 @@ export const Header = () => {
 
   return (
     <>
+
       {
         rdxUser.token ? (<div className='headerDesign'>
+          {/* <img src="../../../public/img/logo-globy.jpg" alt="" /> */}
           <div className="header-logout">
             {(rdxUser.role != "user") ? rdxUser.role : ""}
             {/* path={"/admin/users"} */}

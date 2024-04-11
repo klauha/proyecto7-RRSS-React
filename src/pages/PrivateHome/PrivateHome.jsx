@@ -26,7 +26,7 @@ export const PrivateHome = () => {
             <div className='privateHomeDesign'>
                 {
                     userPosts.map((post, index) => (
-                        <Card key={index} data={post} />
+                        <Card key={index} data={post}/>
                     ))
                 }
             </div>

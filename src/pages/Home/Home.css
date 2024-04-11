@@ -2,9 +2,13 @@
 
     height: 84vh;
     width: 100vw;
+    object-fit: contain;
+    background-image:url("../../../public/img/logo-globy.jpg");
 
-    background-color: white;
-
+    background-size: 100vw 84vh;
+    background-repeat: no-repeat;
+    background-position: center center;
+  
     display: flex;
     flex-direction: column;
     justify-content: center;

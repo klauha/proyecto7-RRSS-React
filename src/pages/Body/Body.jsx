@@ -12,7 +12,8 @@ import { Detail } from "../Detail/Detail"
 
 export const Body = () => {
     return (
-        <Routes>           
+        <Routes> 
+            <Route path="/" element={<Home />} />          
             <Route path="/register" element={<Register />} />
             <Route path="/login" element={<Login />} />
             <Route path="/home" element={<PrivateHome />} />

@@ -1,9 +1,9 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import "./Card.css"
 import { useNavigate } from 'react-router-dom'
+import { addLike } from '../../services/apiCalls'
 
 export const Card = ({ data }) => {
-
   const navigate = useNavigate()
 
   const postDetail = (postId) => {
@@ -11,20 +11,25 @@ export const Card = ({ data }) => {
     navigate("/post-detail/" + postId)
   }
 
+  const likePost = async () => {
+    const result = await addLike(rdxUser.token)
+  }
+
+
   return (
     <>
-     
-     <div className='card' onClick={() => postDetail(data._id)}>
-        
-        <img src={data.urlImg}  />
+
+      <div className='card' onClick={() => postDetail(data._id)}>
+
+        <img src={data.urlImg} />
         <p> {data.content}</p>
         <div>{data.likes}</div>
-        <div className="like-icon">
-        ❤️
+        <div className="like-icon" onClick={likePost}>
+          ❤️
         </div>
 
       </div>
-     
+
     </>
   )
 }

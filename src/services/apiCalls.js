@@ -188,3 +188,29 @@ export const deletePostById= async (token, postId)=>{
         return error
     }
 }
+export const addLike = async (token, postId)=>{
+    try {
+
+        const body = {
+            postId: postId
+        }
+        
+        const response = await fetch(
+            `${apiUrl}/api/post/like`,           
+
+            {
+                method: "Post",
+                headers: {
+                    "Content-Type": "application/json",
+                    "Authorization": "Bearer " + token
+                },
+                body: JSON.stringify(body)
+            }
+        )
+        const data = await response.json()
+        return data
+
+    } catch (error) {
+        return error
+    }
+}
