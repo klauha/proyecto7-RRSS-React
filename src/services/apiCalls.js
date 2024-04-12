@@ -62,7 +62,7 @@ export const getProfile = async (token) => {
     }
 }
 
-export const editProfiles = async (bodyDataToUpdate) => {
+export const editProfiles = async (dataToUpdate,token) => {
     try {
         const response = await fetch(
             `${apiUrl}/api/users/profile`,
@@ -70,9 +70,9 @@ export const editProfiles = async (bodyDataToUpdate) => {
                 method: "Put",
                 headers: {
                     "Content-Type": "application/json",
-                    "Authorization": "Bearer " + localStorage.getItem("token")
+                    "Authorization": "Bearer " + token
                 },
-                body: JSON.stringify(bodyDataToUpdate),
+                body: JSON.stringify(dataToUpdate),
             }
         )
 

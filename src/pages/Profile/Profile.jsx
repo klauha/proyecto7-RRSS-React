@@ -6,13 +6,15 @@ import { useSelector } from 'react-redux'
 import { userData } from '../../app/slices/userSlice'
 import { Input } from '../../common/Input/Input'
 import { Button } from '../../common/Button/Button'
+import { useNavigate } from 'react-router-dom'
 
 
 export const Profile = () => {
     const [userPosts, setUserPosts] = useState([])
-    const [userProfile, setUserProfile] = useState([])
+    const [userProfile, setUserProfile] = useState({})
 
     const rdxUser = useSelector(userData)
+    const navigate = useNavigate()
 
     useEffect(() => {
         const getUserPosts = async () => {
@@ -26,12 +28,14 @@ export const Profile = () => {
     useEffect(() => {
         const getUserProfile = async () => {
             const result = await getProfile(rdxUser.token)
-          
+
             setUserProfile(result.data);
         }
         getUserProfile()
     }, [])
-
+    const redirectToEditProfile = () => {
+        navigate('/edit-profile')
+    }
     return (
 
         <div className='profileDesign'>
@@ -41,7 +45,10 @@ export const Profile = () => {
                         <img src="/img/imgprofile.jpg" alt="profilImg" />
                     </div>
                     <div className="container-data">
-                        <Input
+                        <div className="data-user">{userProfile.first_name}</div>
+                        <div className="data-user">{userProfile.last_name}</div>
+                        <div className="data-user">{userProfile.nickname}</div>
+                        {/* <Input
                             className="inputProfileDesign input-profile"
                             type="text"
                             name="first_name"
@@ -56,15 +63,15 @@ export const Profile = () => {
                         // value={userProfileData?.last_name ?? ""}
                         // disabled={hadleInputDisable}
                         // onChangeFunction={(e) => inputHandler(e)}
-                        ></Input>
+                        ></Input> */}
                         <Button
                             title={"Editar"}
                             className="button-profile"
-                        //   onClick={LogMe}
+                            onClick={redirectToEditProfile}
                         ></Button>
                     </div>
                 </div>
-                
+
             </div>
             {
                 userPosts.map((userPost, index) => (

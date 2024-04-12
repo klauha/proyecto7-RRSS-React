@@ -2,30 +2,30 @@ import React, { useEffect, useState } from 'react'
 import "./EditProfile.css"
 import { Input } from '../../common/Input/Input'
 import { editProfiles, getProfile } from '../../services/apiCalls'
-import { Header } from '../../common/Header/Header'
 import { Button } from '../../common/Button/Button'
 import { useNavigate } from 'react-router-dom'
+import { useSelector } from 'react-redux'
+import { userData } from '../../app/slices/userSlice'
 
-
-export const editProfile = () => {
-
-  const [userProfileData, setUserProfileData] = useState({})
+export const EditProfile = () => {
+  const [userProfile, setUserProfile] = useState({})
   const [hadleInputDisable, setHandleInputDisable] = useState(true)
-  const [token, setToken] = useState(localStorage.getItem('token'))
+  const rdxUser = useSelector(userData)
   const navigate = useNavigate()
 
 
-  useEffect(() => {
-    if (!token) {
-      navigate('/login')
-    }
-  }, [token])
+  // useEffect(() => {
+  //   if (!token) {
+  //     navigate('/login')
+  //   }
+  // }, [token])
 
   // Efecto para obtener los datos del perfil del usuario cuando el componente se monta
   useEffect(() => {
     const getUserProfile = async () => {
-      const profile = await getProfile()
-      setUserProfileData(profile.data)
+      const result = await getProfile(rdxUser.token)
+
+      setUserProfile(result.data);
     }
     getUserProfile()
   }, [])
@@ -40,12 +40,12 @@ export const editProfile = () => {
     try {
 
       const dataToUpdate = {
-        firstName: userProfileData.first_name,
-        lastName: userProfileData.last_name
+        firstName: userProfile.first_name,
+        lastName: userProfile.last_name
       }
       // Llamamos a la función para editar el perfil utilizando la API
 
-      const updateUserProfile = await editProfiles(dataToUpdate)
+      const updateUserProfile = await editProfiles(dataToUpdate,token)
 
     } catch (error) {
 
@@ -56,7 +56,7 @@ export const editProfile = () => {
   }
   // Función para manejar cambios en los inputs
   const inputHandler = (e) => {
-    setUserProfileData((prevState) => (
+    setUserProfile((prevState) => (
       {
         ...prevState,
         [e.target.name]: e.target.value
@@ -66,7 +66,6 @@ export const editProfile = () => {
 
   return (
     <>
-      <Header />
       <div className='profileDesign'>
         <div className='dataUser'>
           <div className='profileImg'>
@@ -76,7 +75,7 @@ export const editProfile = () => {
             className="inputProfileDesign"
             type="text"
             name="first_name"
-            value={userProfileData.first_name || ""}
+            value={userProfile.first_name || ""}
             disabled={hadleInputDisable}
             onChangeFunction={inputHandler}
           ></Input>
@@ -84,17 +83,26 @@ export const editProfile = () => {
             className="inputProfileDesign"
             type="text"
             name="last_name"
-            value={userProfileData?.last_name ?? ""}
+            value={userProfile?.last_name ?? ""}
             disabled={hadleInputDisable}
             onChangeFunction={(e) => inputHandler(e)}
           ></Input>
+           {/* <Input
+            className="inputProfileDesign"
+            type="text"
+            name="nickname"
+            value={userProfile.nickname || ""}
+            disabled={true}
+          ></Input> */}
+          
           <Input
             className="inputProfileDesign"
             type="text"
             name="email"
-            value={userProfileData.email || ""}
+            value={userProfile.email || ""}
             disabled={true}
           ></Input>
+            
           <div className="buttons">
             <Button
               title={"Editar"}
