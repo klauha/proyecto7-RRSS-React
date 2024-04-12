@@ -26,8 +26,7 @@ export const Profile = () => {
     useEffect(() => {
         const getUserProfile = async () => {
             const result = await getProfile(rdxUser.token)
-            console.log(result);
-
+          
             setUserProfile(result.data);
         }
         getUserProfile()

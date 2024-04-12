@@ -31,7 +31,7 @@ export const Card = ({ data }) => {
           ❤️ 
         </div>
         <div className="info-card">
-        <h4 className='nickname'>{data.userId.nickname}</h4>
+        <h4 className='nickname'>{data.userId && data.userId.nickname}</h4>
         <p className='content'> {data.content}</p>
         </div>
         <div>{data.likes}</div>

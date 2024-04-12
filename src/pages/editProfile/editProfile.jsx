@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import "./editProfile.css"
+import "./EditProfile.css"
 import { Input } from '../../common/Input/Input'
 import { editProfiles, getProfile } from '../../services/apiCalls'
 import { Header } from '../../common/Header/Header'

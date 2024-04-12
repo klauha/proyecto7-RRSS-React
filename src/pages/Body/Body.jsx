@@ -3,7 +3,7 @@ import { Home } from "../Home/Home"
 import { Login } from "../Login/Login"
 import { Register } from "../Register/Register"
 import { PrivateHome } from "../PrivateHome/PrivateHome"
-import { editProfile } from "../editProfile/editProfile"
+import { EditProfile } from "../EditProfile/EditProfile"
 import { CreatePost } from "../CreatePost/CreatePost"
 import { Profile } from "../Profile/Profile"
 import { Detail } from "../Detail/Detail"
@@ -18,7 +18,7 @@ export const Body = () => {
             <Route path="/login" element={<Login />} />
             <Route path="/home" element={<PrivateHome />} />
             <Route path="/create-post" element={<CreatePost />} />
-            <Route path="/edit-profile" element={<editProfile />} /> 
+            <Route path="/edit-profile" element={<EditProfile />} /> 
             <Route path="/profile" element={<Profile />} /> 
             <Route path="/post-detail/:id" element={<Detail />} /> 
             {/* <Route path="/admin/users" element={<Admin />} />             */}
