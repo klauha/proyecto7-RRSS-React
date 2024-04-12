@@ -10,6 +10,7 @@ export const Register = () => {
     const [bodyCredentials, setBodyCredentials] = useState(
         {
             email: "",
+            nickname:"",
             password: ""
         }
     )
@@ -45,6 +46,13 @@ export const Register = () => {
                         type="email"
                         placeHolder="email"
                         name="email"
+                        onChangeFunction={(e) => inputHandler(e)}
+                    />
+                    <Input
+                        className="inputDesign input-design"
+                        type="text"
+                        placeHolder="nickname"
+                        name="nickname"
                         onChangeFunction={(e) => inputHandler(e)}
                     />
 

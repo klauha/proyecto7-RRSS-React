@@ -13,6 +13,7 @@ export const PrivateHome = () => {
 
     useEffect(() => {
         const getUsersPosts = async () => {
+            console.log("hola");
             const posts = await getPosts(rdxUser.token)
             console.log(posts);
             setUserPosts(posts.data)
@@ -23,13 +24,16 @@ export const PrivateHome = () => {
 
     return (
         <>
-            <div className='privateHomeDesign'>
-                {
-                    userPosts.map((post, index) => (
-                        <Card key={index} data={post}/>
-                    ))
-                }
-            </div>
+            {if (userPost.length > 0)
+                <div className='privateHomeDesign'>
+                    {
+                        userPosts.map((post, index) => (
+                            <Card key={index} data={post}/>
+                        ))
+                    }
+                </div>
+            }
+            
         </>
     )
 
