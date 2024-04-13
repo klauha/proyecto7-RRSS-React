@@ -1,11 +1,11 @@
 .homeDesign {
 
-    height: 84vh;
+    height: 92vh;
     width: 100vw;
     object-fit: contain;
     background-image:url("../../../public/img/logo-globy.jpg");
 
-    background-size: 100vw 84vh;
+    background-size: 100vw 92vh;
     background-repeat: no-repeat;
     background-position: center center;
   

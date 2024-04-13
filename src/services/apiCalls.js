@@ -214,3 +214,21 @@ export const addLike = async (token, postId)=>{
         return error
     }
 }
+export const getUsers = async (token) => {
+    try {
+        const response = await fetch(
+            `${apiUrl}/api/users/`,
+            {
+                method: "Get",
+                headers: {
+                    "Content-Type": "application/json",
+                    "Authorization": "Bearer " + token
+                }
+            }
+        )
+        const data = await response.json()
+        return data
+    } catch (error) {
+        return error
+    }
+}

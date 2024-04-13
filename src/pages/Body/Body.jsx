@@ -7,6 +7,7 @@ import { EditProfile } from "../EditProfile/EditProfile"
 import { CreatePost } from "../CreatePost/CreatePost"
 import { Profile } from "../Profile/Profile"
 import { Detail } from "../Detail/Detail"
+import { Admin } from "../Admin/Admin"
 
 // import { Admin } from "../Admin/Admin"
 
@@ -21,7 +22,7 @@ export const Body = () => {
             <Route path="/edit-profile" element={<EditProfile />} /> 
             <Route path="/profile" element={<Profile />} /> 
             <Route path="/post-detail/:id" element={<Detail />} /> 
-            {/* <Route path="/admin/users" element={<Admin />} />             */}
+            <Route path="/admin/users" element={<Admin />} />            
         </Routes>
     )
 }

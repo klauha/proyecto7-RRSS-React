@@ -41,7 +41,6 @@ export const Login = () => {
 
       navigate("/home")
     } else {
-      console.log(4);
       // Si el inicio de sesión es exitoso y el usuario es admin o superadmin
       dispatch(loginRdx({
         credentials: {
