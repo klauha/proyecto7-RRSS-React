@@ -12,7 +12,7 @@ function App() {
     <>
       <Header />
       <Body />
-      {location.pathname !== "/" && <FooterBar />}
+      {location.pathname !== "/" && location.pathname !== "/login" && location.pathname !== "/register" && <FooterBar />}
     </>
   )
 }

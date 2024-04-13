@@ -40,7 +40,7 @@ export const Register = () => {
            
             <div className='registerDesign'>
                 <div className="formRegister">
-                    <h3> Crea tu cuenta </h3>
+                    <h5> Crea tu cuenta </h5>
                     <Input
                         className="inputDesign input-design"
                         type="email"

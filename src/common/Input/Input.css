@@ -6,7 +6,8 @@
     outline: none;
     margin: 2em;
     border-radius: 0.5em;
-    
+
+    box-shadow: 0 0 6px rgba(51, 64, 63, 0.6);
    
 }
 
