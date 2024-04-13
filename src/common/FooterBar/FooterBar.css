@@ -3,7 +3,8 @@
     height: 8vh;
     width: 100%;
     /* padding: 30px; */
-    background-color:rgb(60, 43, 120);
+    /* background-color:rgb(60, 43, 120); */
+    background-color: rgb(20, 34, 71);
     color: black;
     display: flex;
     flex-direction: row;

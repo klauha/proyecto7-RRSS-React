@@ -2,9 +2,9 @@ import React, { useEffect } from 'react'
 import "./Header.css"
 import { CustomLink } from '../CustomLink/CustomLink'
 import { useNavigate } from 'react-router-dom'
-
 import { useDispatch, useSelector } from 'react-redux';
 import { logoutRdx, userData } from '../../app/slices/userSlice';
+import logo from '../../../public/img/logo.png'
 
 
 export const Header = () => {
@@ -35,13 +35,13 @@ export const Header = () => {
 
       {
         rdxUser.token ? (<div className='headerDesign'>
-          {/* <img src="../../../public/img/logo-globy.jpg" alt="" /> */}
+          <img src={logo} alt="Logo" className='logo-style' />
           <div className="header-logout">
             {(rdxUser.role != "user") ? rdxUser.role : ""}
             {/* path={"/admin/users"} */}
 
           </div>
-          
+
           <div className="header-logout" onClick={handleLogout}>
             Log Out
           </div>
@@ -49,21 +49,23 @@ export const Header = () => {
 
         ) : (
           <div className='headerDesign'>
-            <CustomLink
-              title={"Home"}
-              path={"/"}
-            />
+            <img src={logo} alt="Logo" className='logo-style' />
+            <div className="links-container">
+              <CustomLink
+                title={"Home"}
+                path={"/"}
+              />
 
-            <CustomLink
-              title={"Registro"}
-              path={"/register"}
+              <CustomLink
+                title={"Registro"}
+                path={"/register"}
 
-            />
-            <CustomLink
-              title={"Login"}
-              path={"/login"}
-            />
-
+              />
+              <CustomLink
+                title={"Login"}
+                path={"/login"}
+              />
+            </div>
           </div>
         )}
     </>

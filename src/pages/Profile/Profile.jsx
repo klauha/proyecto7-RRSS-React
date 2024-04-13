@@ -39,7 +39,7 @@ export const Profile = () => {
     return (
 
         <div className='profileDesign'>
-            <div className="userProfile">
+            <div className="user-profile">
                 <div className="container-user-data">
                     <div className='profileImg'>
                         <img src="/img/imgprofile.jpg" alt="profilImg" />
@@ -48,22 +48,7 @@ export const Profile = () => {
                         <div className="data-user">{userProfile.first_name}</div>
                         <div className="data-user">{userProfile.last_name}</div>
                         <div className="data-user">{userProfile.nickname}</div>
-                        {/* <Input
-                            className="inputProfileDesign input-profile"
-                            type="text"
-                            name="first_name"
-                        // value={userProfileData.first_name || ""}
-                        // disabled={hadleInputDisable}
-                        // onChangeFunction={inputHandler}
-                        ></Input>
-                        <Input
-                            className="inputProfileDesign input-profile"
-                            type="text"
-                            name="last_name"
-                        // value={userProfileData?.last_name ?? ""}
-                        // disabled={hadleInputDisable}
-                        // onChangeFunction={(e) => inputHandler(e)}
-                        ></Input> */}
+
                         <Button
                             title={"Editar"}
                             className="button-profile"
@@ -71,14 +56,14 @@ export const Profile = () => {
                         ></Button>
                     </div>
                 </div>
-
-            </div>
-            {
-                userPosts.map((userPost, index) => (
-                    <Card key={index} data={userPost} />
-                ))
-            }
+                </div>
+           
+                {
+                    userPosts.map((userPost, index) => (
+                        <Card key={index} data={userPost} />
+                    ))
+                }
+                
         </div>
-
     )
 }
