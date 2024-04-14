@@ -35,6 +35,7 @@ export const Login = () => {
     if (responseApiLogin.success && decoded.roleName === "user") {
       dispatch(loginRdx({
         token: responseApiLogin.token,
+        userId: decoded.userId,
         // name: decoded.username,
         role: decoded.roleName
       }))
@@ -44,6 +45,7 @@ export const Login = () => {
       // Si el inicio de sesión es exitoso y el usuario es admin o superadmin
       dispatch(loginRdx({
           token: responseApiLogin.token,
+          userId: decoded.userId,
           // name: decoded.username,
           role: decoded.roleName
       }))

@@ -40,7 +40,7 @@ export const Profile = () => {
 
         <div className='profileDesign'>
             <div className="user-profile">
-                <div className="container-user-data">
+                {/* <div className="container-user-data"> */}
                     <div className='profileImg'>
                         <img src="/img/imgprofile.jpg" alt="profilImg" />
                     </div>
@@ -55,15 +55,16 @@ export const Profile = () => {
                             onClick={redirectToEditProfile}
                         ></Button>
                     </div>
-                </div>
-                </div>
-           
+                {/* </div> */}
                 {
-                    userPosts.map((userPost, index) => (
-                        <Card key={index} data={userPost} />
-                    ))
-                }
-                
+                userPosts.map((userPost, index) => (
+                    <Card key={index} data={userPost} />
+                ))
+            }
+            </div>
+
+            
+
         </div>
     )
 }

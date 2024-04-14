@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react'
 import "./Card.css"
 import { useNavigate } from 'react-router-dom'
 import { addLike } from '../../services/apiCalls'
-import {  useSelector } from 'react-redux';
-import {  userData } from '../../app/slices/userSlice';
+import { useSelector } from 'react-redux';
+import { userData } from '../../app/slices/userSlice';
 
 export const Card = ({ data }) => {
   const navigate = useNavigate()
@@ -16,29 +16,23 @@ export const Card = ({ data }) => {
     navigate("/post-detail/" + postId)
   }
 
-  const likePost = async () => {
-    const result = await addLike(rdxUser.token)
+  const likePost = async (postId) => {
+    const result = await addLike(rdxUser.token, postId)
   }
 
 
   return (
     <>
-
       <div className='card' onClick={() => postDetail(data._id)}>
-      
         <img src={data.urlImg} />
-        <div className="like-icon" onClick={likePost}>
-          ❤️ 
+        <div className="like-icon" onClick={() => likePost(data._id)}>
+          ❤️ {data.likes?.length}
         </div>
         <div className="info-card">
-        <h4 className='nickname'>{data.userId && data.userId.nickname}</h4>
-        <p className='content'> {data.content}</p>
+          <h4 className='nickname'>{data.userId && data.userId.nickname}</h4>
+          <p className='content'> {data.content}</p>
         </div>
-        <div>{data.likes}</div>
-      
-
       </div>
-
     </>
   )
 }

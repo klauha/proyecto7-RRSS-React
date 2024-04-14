@@ -1,9 +1,9 @@
 
 .card {
-    min-width: 400px;
+    width: 350px;
     height: 480px;
     box-sizing: border-box;
-    padding: 4px;
+    padding: 0px;
     border: 1px solid  rgb(20, 34, 71);
     margin-top: 40px;
     background-color:white;
@@ -17,11 +17,11 @@
 }
 
 .card > img {
-    width: 350px;
+    width: 340px;
     height: 350px;
     aspect-ratio: 16/9;
     opacity: 1;
-    margin-top: 20px;
+    margin-top: 5px
 }
 
 

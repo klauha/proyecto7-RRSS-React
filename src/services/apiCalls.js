@@ -199,7 +199,7 @@ export const addLike = async (token, postId)=>{
             `${apiUrl}/api/post/like`,           
 
             {
-                method: "Post",
+                method: "Put",
                 headers: {
                     "Content-Type": "application/json",
                     "Authorization": "Bearer " + token

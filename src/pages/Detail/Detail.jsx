@@ -16,6 +16,7 @@ export const Detail = () => {
   useEffect(() => {
     const getPost = async () => {
       const result = await getPostId(rdxUser.token, params.id)
+      console.log(result.data.userId);
       setPostDetail(result.data)
     }
     getPost()
@@ -24,7 +25,7 @@ export const Detail = () => {
   const deletePost = async () => {
     try {
       const postToDelete = await deletePostById(rdxUser.token, params.id)
-      setPostDetail(result.data)
+
       navigate('/profile')
     } catch (error) {
 
@@ -37,11 +38,16 @@ export const Detail = () => {
         data={postDetail}
         className="card-detail"
       />
-      <Button
-        title={"Eliminar Post"}
-        className="ButtonDesign"
-        onClick={deletePost}
-      ></Button>
+      {
+        postDetail?.userId?._id === rdxUser.userId
+          ? <Button
+            title={"Eliminar Post"}
+            className="ButtonDesign"
+            onClick={deletePost}
+          ></Button>
+          : <div></div>
+      }
+
     </div>
 
   )

@@ -6,6 +6,7 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
 }
 /* .delete-design{
     height: 2em;
