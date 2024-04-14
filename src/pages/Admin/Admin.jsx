@@ -35,7 +35,9 @@ export const Admin = () => {
     useEffect(() => {
         const getUserByAdmin = async () => {
             try {
+                console.log(rdxUser);
                 const users = await getUsers(rdxUser.token)
+                console.log(users);
                 setUsersData(users.data)
             } catch (error) {
                 console.error("Error al obtener los usuarios:", error)

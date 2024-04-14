@@ -43,11 +43,9 @@ export const Login = () => {
     } else {
       // Si el inicio de sesión es exitoso y el usuario es admin o superadmin
       dispatch(loginRdx({
-        credentials: {
           token: responseApiLogin.token,
           // name: decoded.username,
           role: decoded.roleName
-        }
       }))
 
       navigate("/home")
