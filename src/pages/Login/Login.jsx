@@ -23,9 +23,32 @@ export const Login = () => {
     }
   )
 
+  const [bodyCredentialsError, setBodyCredentialsError] = useState(
+    {
+      email: "",
+      password: ""
+    }
+  )
+
   const navigate = useNavigate()
 
   const LogMe = async () => {
+    setBodyCredentialsError({...bodyCredentialsError, email: ""})
+    setBodyCredentialsError({...bodyCredentialsError, password: ""})
+
+    console.log(1);
+    if(!bodyCredentials.email) {
+      setBodyCredentialsError({...bodyCredentialsError, email: "Introduce un email"})
+
+      return;
+    }
+
+    if (bodyCredentials.password === "") {
+      console.log(3);
+      setBodyCredentialsError({...bodyCredentialsError, password: "Introduce el password"})
+      return;
+    }
+console.log(4);
     // Llamar a la función de inicio de sesión proporcionando las credenciales
     const responseApiLogin = await login(bodyCredentials)
     const decoded = decodeToken(responseApiLogin.token)
@@ -75,6 +98,11 @@ export const Login = () => {
             name="email"
             onChangeFunction={(e) => inputHandler(e)}
           />
+          {
+            bodyCredentialsError.email === "Introduce un email" 
+              ?  <div> { bodyCredentialsError.email } </div> 
+              :  <div></div>     
+          }
           <Input
             className="inputDesign"
             type="password"
@@ -82,12 +110,18 @@ export const Login = () => {
             name="password"
             onChangeFunction={(e) => inputHandler(e)}
           />
+          {
+            bodyCredentialsError.password === "Introduce el password" 
+              ?  <div> { bodyCredentialsError.password } </div> 
+              :  <div></div>     
+          }
 
           <Button
             title={"Entrar"}
             className="ButtonDesign"
             onClick={LogMe}
           />
+
         </div>
       </div>
     </>
