@@ -12,19 +12,17 @@ export const Card = ({ data }) => {
 
 
   const postDetail = (postId) => {
-    console.log(postId);
     navigate("/post-detail/" + postId)
   }
 
   const likePost = async (postId) => {
-    const result = await addLike(rdxUser.token, postId)
+    const result = await addLike(rdxUser.token, postId);
   }
-
 
   return (
     <>
-      <div className='card' onClick={() => postDetail(data._id)}>
-        <img src={data.urlImg} />
+      <div className='card'>
+        <img src={data.urlImg} onClick={() => postDetail(data._id)}/>
         <div className="like-icon" onClick={() => likePost(data._id)}>
           ❤️ {data.likes?.length}
         </div>

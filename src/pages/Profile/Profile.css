@@ -1,16 +1,13 @@
 .profileDesign {
-    /* width: 100vw; */
-
     background-color: white;
-
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 15px;
     margin-bottom: 100px;
-
 }
+
 .container-user-data{
     background-color:transparent;
     display: flex;
@@ -18,10 +15,9 @@
     justify-content: start;
     align-items: center;
     height: 15vh;
-    /* max-width: 400px; */
-    /* width: 60vw; */
     margin-top: 40px;
 }
+
 .profileImg {
     margin-top: 20px;
     width: 130px;
@@ -31,6 +27,7 @@
     display: flex;
     margin:2em;
   }
+  
 .button-profile{
     height: 1.5em;
     width: 22em;
@@ -45,8 +42,7 @@
     background-color:rgb(20, 34, 71) ;
     font-family: poppins;
     font-size: 15px;
-    font-family: poppins;
-    
+    font-family: poppins; 
 }
 
 .button-profile:hover {
@@ -58,5 +54,5 @@
 .user-profile {
     display: flex;
     flex-direction: column;
-    align-items: center;;
+    align-items: center;
 }

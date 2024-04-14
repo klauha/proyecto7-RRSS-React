@@ -45,8 +45,7 @@ export const Profile = () => {
                         <img src="/img/imgprofile.jpg" alt="profilImg" />
                     </div>
                     <div className="container-data">
-                        <div className="data-user">{userProfile.firstName}</div>
-                        <div className="data-user">{userProfile.lastName}</div>
+                       
                         <div className="data-user">{userProfile.nickname}</div>
 
                         <Button
