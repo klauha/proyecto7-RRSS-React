@@ -26,9 +26,9 @@
     text-decoration-color:aqua;
 }
 .logo-style {
-    height: 50px;
+    height:100%;
     margin-left: 20px;
-    
+     object-fit: contain;
 }
 .links-container {
     display: flex;

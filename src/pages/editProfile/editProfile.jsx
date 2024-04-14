@@ -24,7 +24,7 @@ export const EditProfile = () => {
   useEffect(() => {
     const getUserProfile = async () => {
       const result = await getProfile(rdxUser.token)
-
+console.log(result.data);
       setUserProfile(result.data);
     }
     getUserProfile()
@@ -38,17 +38,16 @@ export const EditProfile = () => {
   // Función para editar el perfil de usuario
   const editProfileUser = async () => {
     try {
-
+console.log(1);
       const dataToUpdate = {
         firstName: userProfile.first_name,
-        lastName: userProfile.last_name
+        lastName: userProfile.last_name,
       }
+      console.log(dataToUpdate);
       // Llamamos a la función para editar el perfil utilizando la API
-
-      const updateUserProfile = await editProfiles(dataToUpdate,token)
-
+      const updateUserProfile = await editProfiles(dataToUpdate, rdxUser.token)
     } catch (error) {
-
+      console.log(error);
       // / Cambiar el estado para habilitar/deshabilitar la edición después de actualizar
     } finally {
       setHandleInputDisable(!hadleInputDisable)
@@ -75,7 +74,7 @@ export const EditProfile = () => {
             className="inputProfileDesign"
             type="text"
             name="first_name"
-            value={userProfile.first_name || ""}
+            value={userProfile.firstName || ""}
             disabled={hadleInputDisable}
             onChangeFunction={inputHandler}
           ></Input>
@@ -83,17 +82,17 @@ export const EditProfile = () => {
             className="inputProfileDesign"
             type="text"
             name="last_name"
-            value={userProfile?.last_name ?? ""}
+            value={userProfile?.lastName ?? ""}
             disabled={hadleInputDisable}
             onChangeFunction={(e) => inputHandler(e)}
           ></Input>
-           {/* <Input
+           <Input
             className="inputProfileDesign"
             type="text"
             name="nickname"
             value={userProfile.nickname || ""}
             disabled={true}
-          ></Input> */}
+          ></Input>
           
           <Input
             className="inputProfileDesign"
