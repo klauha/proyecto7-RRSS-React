@@ -3,7 +3,7 @@
     height: 92vh;
     width: 100vw;
     object-fit: contain;
-    background-image:url("../../../public/img/logo-globy.jpg");
+    background-image:url("/img/logo-globy.jpg");
 
     background-size: 100vw 92vh;
     background-repeat: no-repeat;

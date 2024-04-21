@@ -4,7 +4,7 @@ import { CustomLink } from '../CustomLink/CustomLink'
 import { useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux';
 import { logoutRdx, userData } from '../../app/slices/userSlice';
-import logo from '../../../public/img/logo.png'
+import logo from '/img/logo.png'
 
 
 export const Header = () => {
@@ -13,8 +13,6 @@ export const Header = () => {
 
   //Instancia de conexion a modo escritura
   const dispatch = useDispatch();
-
-  console.log(rdxUser.token);
   // useEffect(() => {
   //   console.log(rdxUser, " credenciales pasaporte");
   // }, [rdxUser]);
@@ -22,22 +20,22 @@ export const Header = () => {
   const navigate = useNavigate()
 
   const handleLogout = () => {
-    console.log('hola');
-
     // Eliminamos el token del store y actualizamos el estado local
     dispatch(logoutRdx({ token: "" }))
-    console.log(rdxUser);
     navigate("/login")
   }
 
   return (
     <>
-
       {
         rdxUser.token ? (<div className='headerDesign'>
           <img src={logo} alt="Logo" className='logo-style' />
-          <div className="header-logout">
-            {(rdxUser.role != "user") ? rdxUser.role : ""}
+          <div className="header-logout" >
+          <CustomLink
+                title={(rdxUser.role != "user") ? rdxUser.role : ""}
+                path={"/admin/users"}
+              />
+            {/* {(rdxUser.role != "user") ? rdxUser.role : ""} */}
             {/* path={"/admin/users"} */}
 
           </div>

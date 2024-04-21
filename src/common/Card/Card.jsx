@@ -5,7 +5,7 @@ import { addLike } from '../../services/apiCalls'
 import { useSelector } from 'react-redux';
 import { userData } from '../../app/slices/userSlice';
 
-export const Card = ({ data }) => {
+export const Card = ({ data, likePost }) => {
   const navigate = useNavigate()
   //Instancia de conexion a modo lectura
   const rdxUser = useSelector(userData);
@@ -13,10 +13,6 @@ export const Card = ({ data }) => {
 
   const postDetail = (postId) => {
     navigate("/post-detail/" + postId)
-  }
-
-  const likePost = async (postId) => {
-    const result = await addLike(rdxUser.token, postId);
   }
 
   return (
